@@ -1,0 +1,829 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Caveat", cursive;
+    background-color: #fffaf7;
+    color: #292329;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+
+
+.nav-bar {
+    width: 230px;
+    flex-shrink: 0;
+    background-color: #937078;
+}
+
+.nav {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.brand {
+    text-align: center;
+    padding: 10px 8px 20px;
+}
+
+.heart {
+    display: block;
+    color: rgb(255, 238, 238);
+    font-size: 40px;
+}
+
+.heading {
+    font-size: 32px;
+    color: rgb(255, 238, 238);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 20px;
+}
+
+.link-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    text-decoration: none;
+    color: rgb(255, 238, 238);
+    font-size: 16px;
+    font-family: "Patrick Hand", cursive;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.link-text:hover,
+.link-text:focus-visible {
+    background-color: #a78089;
+}
+
+.icon {
+    font-size: 17px;
+}
+
+.books {
+    display: block;
+    width: 320px;
+    max-width: none;
+    height: auto;
+    margin-top: auto;
+    margin-left: -80px;
+    object-fit: contain;
+}
+
+
+/* =====================================
+   4. MAIN CONTENT
+===================================== */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =====================================
+   5. TOP BANNER
+===================================== */
+
+.top {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.top-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =====================================
+   6. CONTENT GRID
+===================================== */
+
+.content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 40px;
+    padding: 10px 40px 40px 32px;
+    align-items: start;
+}
+
+.task-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+
+/* =====================================
+   7. SEARCH BOX
+===================================== */
+
+.search-box {
+    width: 100%;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px 0 12px;
+    background-color: white;
+    border: 1px solid pink;
+    border-radius: 10px;
+}
+
+.search-icon {
+    position: static;
+    float: none;
+    font-size: 20px;
+    color: rgb(160, 51, 69);
+    flex-shrink: 0;
+}
+
+.input-box {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 19px;
+    font-family: "Patrick Hand", cursive;
+}
+
+.input-box::placeholder {
+    color: #777;
+}
+
+.add-button {
+    width: 78px;
+    height: 38px;
+    flex-shrink: 0;
+    position: static;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(158, 71, 86);
+    color: white;
+    font-size: 13px;
+    font-family: "Patrick Hand", cursive;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+    background-color: #813747;
+}
+
+
+/* =====================================
+   8. TASK OPTIONS
+===================================== */
+
+.task-options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.labeldate,
+.priority,
+.important-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+    font-family: "Caveat", cursive;
+}
+
+.due-date,
+.priority-input {
+    padding: 5px;
+    border: 1px solid pink;
+    border-radius: 5px;
+    background-color: white;
+    font-family: "Patrick Hand", cursive;
+    font-size: 13px;
+}
+
+.important {
+    width: 14px;
+    height: 14px;
+    accent-color: #9e4756;
+}
+
+
+/* =====================================
+   9. TASK SECTIONS
+===================================== */
+
+.task-section {
+    width: 100%;
+    margin-bottom: 20px;
+    scroll-margin-top: 20px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.today {
+    position: static;
+    font-size: 24px;
+    font-family: "Caveat", cursive;
+    font-weight: 500;
+}
+
+.completed-day {
+    position: static;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 32px;
+    height: 20px;
+    padding: 0 8px;
+    background-color: rgb(245, 240, 240);
+    border-radius: 15px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 12px;
+}
+
+.container {
+    position: static;
+    list-style: none;
+    width: 100%;
+    min-height: 64px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 1px solid pink;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+    
+}
+
+.container li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 62px;
+    height: auto;
+    padding: 15px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 15px;
+    color: rgb(71, 71, 71);
+    overflow-wrap: anywhere;
+}
+
+.container li + li {
+    border-top: 1px solid #f8dce3;
+}
+
+
+/* =====================================
+   10. DATE CARD
+===================================== */
+
+.current-date {
+    width: 100%;
+    min-height: 118px;
+    padding: 12px;
+    background-color: rgb(250, 230, 234);
+    border: 1px solid pink;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.current-date p {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.current-date h2 {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.current-date > span {
+    display: block;
+    font-size: 19px;
+}
+
+
+/* =====================================
+   11. QUOTE CARD
+===================================== */
+
+.quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 118px;
+    padding: 15px;
+    border: 1px solid pink;
+    border-radius: 10px;
+    background-color: rgb(250, 230, 234);
+    text-align: center;
+    font-size: 25px;
+}
+
+.distance {
+    width: 100%;
+    max-width: 250px;
+    margin: 0;
+}
+
+
+/* =====================================
+   12. PROGRESS CARD
+===================================== */
+
+.progress-card {
+    width: 100%;
+    min-height: 160px;
+    padding: 8px 10px;
+    background-color: rgb(250, 230, 234);
+    border: 1px solid pink;
+    border-radius: 10px;
+}
+
+.progress-card h2 {
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.progress-ring {
+    --progress: 20%;
+
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    background: conic-gradient(
+        #72324a var(--progress),
+        #d6a0b2 0
+    );
+}
+
+.progress-ring span {
+    display: grid;
+    place-items: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background-color: rgb(250, 230, 234);
+    font-size: 24px;
+}
+
+.progress-card p {
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: "Patrick Hand", cursive;
+    font-size: 12px;
+}
+
+
+/* =====================================
+   13. SMALL LAPTOPS
+   Screen width: 1200px or less
+===================================== */
+
+@media (max-width: 1200px) {
+
+    .nav-bar {
+        width: 200px;
+    }
+
+    .content {
+        grid-template-columns: minmax(0, 1fr) 250px;
+        gap: 24px;
+        padding: 15px 24px;
+    }
+
+    .heading {
+        font-size: 29px;
+    }
+
+    .books {
+        width: 280px;
+        margin-left: -70px;
+    }
+}
+
+
+/* =====================================
+   14. TABLETS
+   Screen width: 900px or less
+===================================== */
+
+@media (max-width: 900px) {
+
+    .nav-bar {
+        width: 175px;
+    }
+
+    .heading {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        padding: 0 10px;
+    }
+
+    .link-text {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .right-column {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .progress-card {
+        grid-column: 1 / -1;
+    }
+
+    .top {
+        height: 160px;
+    }
+
+    .task-options {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* =====================================
+   15. MOBILE DEVICES
+   Screen width: 768px or less
+===================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        display: block;
+    }
+
+    .nav-bar {
+        width: 100%;
+    }
+
+    .nav {
+        min-height: auto;
+        position: static;
+        overflow: visible;
+        padding: 10px;
+    }
+
+    .brand {
+        padding: 0 0 10px;
+    }
+
+    .heart {
+        font-size: 28px;
+    }
+
+    .heading {
+        font-size: 28px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0;
+    }
+
+    .link-text {
+        padding: 7px 9px;
+        font-size: 13px;
+    }
+
+    .link-text .icon {
+        font-size: 14px;
+    }
+
+    .books {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .top {
+        height: 145px;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .task-options {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .today {
+        font-size: 23px;
+    }
+
+    .right-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quote {
+        font-size: 22px;
+    }
+
+    .current-date h2 {
+        font-size: 24px;
+    }
+}
+
+
+/* =====================================
+   16. SMALL MOBILE DEVICES
+   Screen width: 480px or less
+===================================== */
+
+@media (max-width: 480px) {
+
+    .heading {
+        font-size: 25px;
+    }
+
+    .heart {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        gap: 4px;
+    }
+
+    .link-text {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .link-text .icon {
+        font-size: 12px;
+    }
+
+    .top {
+        height: 110px;
+    }
+
+    .content {
+        padding: 12px;
+        gap: 18px;
+    }
+
+    .search-box {
+        height: 52px;
+        gap: 8px;
+        padding: 0 6px 0 10px;
+    }
+
+    .search-icon {
+        font-size: 17px;
+    }
+
+    .input-box {
+        font-size: 13px;
+    }
+
+    .add-button {
+        width: 65px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .task-options {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .labeldate,
+    .priority,
+    .important-label {
+        font-size: 17px;
+    }
+
+    .due-date,
+    .priority-input {
+        font-size: 12px;
+    }
+
+    .today {
+        font-size: 22px;
+    }
+
+    .container li {
+        font-size: 14px;
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .current-date,
+    .quote,
+    .progress-card {
+        width: 100%;
+    }
+
+    .quote {
+        font-size: 24px;
+    }
+}
+
+
+/* =====================================
+   17. REDUCED MOTION ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .link-text,
+    .add-button {
+        transition: none;
+    }
+}
+/* Account and logout */
+
+.account-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px 15px;
+}
+
+.user-avatar {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgb(255, 238, 238);
+    color: #72324a;
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#user-email {
+    color: white;
+    font-family: "Patrick Hand", cursive;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+#logout-btn {
+    padding: 7px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #72324a;
+    color: white;
+    font-family: "Patrick Hand", cursive;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    background-color: #542337;
+}
+
+/* Task item internals */
+
+.task-item {
+    gap: 10px;
+}
+
+.task-checkbox {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    accent-color: #9e4756;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-details {
+    flex-shrink: 0;
+    margin-right: 12px;
+    font-size: 12px;
+    color: #a07b83;
+}
+
+.delete-btn {
+    flex-shrink: 0;
+    width: 70px;
+    height: 35px;
+    padding: 6px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(158, 71, 86);
+    color: white;
+    font-family: "Patrick Hand", cursive;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #813747;
+}
+
+/* Completed task appearance */
+
+.task-text.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

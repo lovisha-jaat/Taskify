@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My ToDoList</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://kit.fontawesome.com/01a5dd5a4f.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+
+        <aside class="nav-bar">
+
+            <nav class="nav" aria-label="Main navigation">
+
+                <div class="brand">
+                    <span class="heart">♥</span>
+                    <h2 class="heading">My ToDoList</h2>
+
+                    <!-- User account + logout section -->
+                    <div class="account-controls">
+                        <div class="user-avatar" id="user-avatar" aria-hidden="true">?</div>
+                        <span id="user-email">Loading account...</span>
+                        <button id="logout-btn" type="button">Logout</button>
+                    </div>
+                </div>
+
+                <div class="nav-links">
+
+                    <a class="link-text" href="#home">
+                        <i class="fa-solid fa-house icon"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <a class="link-text" href="#today">
+                        <i class="fa-solid fa-calendar-check icon"></i>
+                        <span>Today</span>
+                    </a>
+
+                    <a class="link-text" href="#upcoming">
+                        <i class="fa-regular fa-calendar icon"></i>
+                        <span>Upcoming</span>
+                    </a>
+
+                    <a class="link-text" href="#important-tasks">
+                        <i class="fa-regular fa-star icon"></i>
+                        <span>Important</span>
+                    </a>
+
+                    <a class="link-text" href="#completed">
+                        <i class="fa-solid fa-circle-check icon"></i>
+                        <span>Completed</span>
+                    </a>
+
+                </div>
+
+                <img class="books" src="images/books.png" alt="Books and flowers">
+
+            </nav>
+
+        </aside>
+
+
+        <main class="main-content" id="home">
+
+            <section class="top">
+                <img class="top-image" src="images/top.png" alt="Cozy cat sleeping beside books">
+            </section>
+
+            <div class="content">
+
+
+                <div class="task-column">
+
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+
+                        <input class="input-box" type="text" aria-label="New task" placeholder="Add a new task...">
+
+                        <button class="add-button" type="button">
+                            Click me
+                        </button>
+
+                    </div>
+
+
+                    <div class="task-options">
+
+                        <label class="labeldate">
+                            Due date
+                            <input class="due-date" type="date">
+                        </label>
+
+                        <label class="priority">
+                            Priority
+                            <select class="priority-input">
+                                <option>Low</option>
+                                <option selected>Medium</option>
+                                <option>High</option>
+                            </select>
+                        </label>
+
+                        <label class="important-label">
+                            <input class="important" type="checkbox">
+                            Important
+                        </label>
+
+                    </div>
+
+                    <section class="task-section first" id="today">
+
+                        <div class="section-heading">
+                            <h2 class="today">☀️ Today</h2>
+                            <span class="completed-day">3/5</span>
+                        </div>
+
+                        <ul class="container" id="present">
+                            <li>Add your first task for today.</li>
+                        </ul>
+
+                    </section>
+
+
+                    <section class="task-section upcoming" id="upcoming">
+
+                        <div class="section-heading">
+                            <h2 class="today">▦ Upcoming</h2>
+                            <span class="completed-day">0</span>
+                        </div>
+
+                        <ul class="container" id="upcoming-list">
+                            <li>No upcoming tasks.</li>
+                        </ul>
+
+                    </section>
+
+
+                    <section class="task-section important-tasks" id="important-tasks">
+
+                        <div class="section-heading">
+                            <h2 class="today">☆ Important</h2>
+                            <span class="completed-day">0</span>
+                        </div>
+
+                        <ul class="container" id="important">
+                            <li>No important tasks.</li>
+                        </ul>
+
+                    </section>
+
+
+                    <section class="task-section" id="completed">
+
+                        <div class="section-heading">
+                            <h2 class="today">✓ Completed</h2>
+                            <span class="completed-day">0</span>
+                        </div>
+
+                        <ul class="container" id="complete">
+                            <li>No completed tasks yet.</li>
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <aside class="right-column">
+
+
+                    <section class="current-date">
+
+                        <p>
+                            <i class="fa-regular fa-calendar icon"></i>
+                            <span id="date-text">Wed, 7 Oct 2025</span>
+                        </p>
+
+                        <h2>Keep going</h2>
+                        <span>♥</span>
+
+                    </section>
+
+
+                    <section class="quote">
+                        <p class="distance">
+                            Discipline is the bridge between
+                            your goals and dreams ♥
+                        </p>
+                    </section>
+
+
+                    <section class="progress-card">
+
+                        <h2>Today's Progress</h2>
+
+                        <div class="progress-ring">
+                            <span id="progress-text">0/0</span>
+                        </div>
+
+                        <p id="progress-label">
+                            No tasks for today yet.
+                        </p>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- type="module" is REQUIRED because script.js uses ES module imports -->
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

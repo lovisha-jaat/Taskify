@@ -1,0 +1,511 @@
+
+/* =========================
+   1. BASIC RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    background-image: url("images/login.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: 'Patrick Hand', cursive;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   2. MAIN LOGIN CARD
+========================= */
+
+.page {
+    width: min(540px, 100%);
+    min-height: 0;
+    height: auto;
+
+    padding: 25px 30px 25px;
+
+    border-radius: 20px;
+    background-color: rgb(255, 247, 248);
+
+    margin-right: 20px;
+    text-align: center;
+}
+
+
+/* =========================
+   3. HEADING AND TEXT
+========================= */
+
+.heading {
+    font-size: clamp(32px, 4vw, 46px);
+    font-family: "Caveat", cursive;
+
+    margin: 20px 0 0;
+    padding: 0;
+
+    line-height: 1.2;
+}
+
+.heart {
+    font-size: 0.85em;
+    padding-left: 5px;
+    color: rgb(182, 14, 92);
+}
+
+.sub-heading {
+    font-size: 20px;
+    color: rgb(182, 14, 92);
+
+    margin: 8px 0 0;
+}
+
+.quote {
+    font-size: 17px;
+    margin: 15px 0 25px;
+}
+
+
+/* =========================
+   4. FORM LAYOUT
+========================= */
+
+form {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 12px;
+
+    width: 100%;
+}
+
+.email,
+.password {
+    width: 100%;
+    height: 46px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+}
+
+.email,
+.password,
+.submit-btn {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   5. INPUT FIELDS
+========================= */
+
+.einput,
+.pinput {
+    width: 100%;
+    height: 100%;
+
+    border: 1.5px solid pink;
+    border-radius: 8px;
+
+    outline: none;
+    box-shadow: none;
+
+    padding: 10px 12px 10px 42px;
+
+    font-family: 'Patrick Hand', cursive;
+    font-size: 16px;
+
+    background-color: white;
+    color: #862f3d;
+}
+
+.einput:focus,
+.pinput:focus {
+    border-color: rgb(158, 71, 86);
+   
+}
+
+.einput::placeholder,
+.pinput::placeholder {
+    color: rgb(134, 47, 61);
+    opacity: 1;
+}
+
+
+/* =========================
+   6. INPUT ICONS
+========================= */
+
+.msgemojii,
+.lockemojii {
+    position: absolute;
+
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 18px;
+    color: black;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* =========================
+   7. REMEMBER ME
+========================= */
+
+.remember {
+    grid-column: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 6px;
+
+    position: static;
+    width: 100%;
+    height: auto;
+
+    font-size: 15px;
+}
+
+#remember {
+    width: 15px;
+    height: 15px;
+
+    margin: 0;
+
+    accent-color: rgb(158, 71, 86);
+    cursor: pointer;
+}
+
+.remember label {
+    cursor: pointer;
+}
+
+
+/* =========================
+   8. FORGOT PASSWORD
+========================= */
+
+.forget {
+    grid-column: 2;
+
+    width: 100%;
+    height: auto;
+
+    position: static;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    font-size: 15px;
+    margin: 0;
+}
+
+.forget p {
+    margin: 0;
+    cursor: pointer;
+}
+
+
+/* =========================
+   9. LOGIN BUTTON
+========================= */
+
+.submit-btn {
+    width: 100%;
+    min-height: 44px;
+
+    border-radius: 8px;
+    border: none;
+
+    background-color: rgb(158, 71, 86);
+    color: white;
+
+    font-family: 'Patrick Hand', cursive;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin: 0;
+    position: static;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: rgb(135, 54, 70);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   10. OR DIVIDER
+========================= */
+
+.or-divider {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+    width: 100%;
+
+    margin: 20px auto;
+
+    color: #b66b87;
+
+    font-family: 'Patrick Hand', cursive;
+    font-size: 16px;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+
+    flex: 1;
+    height: 1px;
+
+    background-color: #e8cbd3;
+}
+
+
+/* =========================
+   11. SOCIAL LOGIN BUTTONS
+========================= */
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+    align-items: center;
+
+    width: 100%;
+}
+
+.social-btn {
+    width: 100%;
+    min-height: 42px;
+
+    border-radius: 8px;
+    border: 1.5px solid pink;
+
+    outline: none;
+
+    background-color: rgb(255, 247, 248);
+    color: black;
+
+    font-family: 'Patrick Hand', cursive;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.social-btn:hover {
+    background-color: #ffe9ef;
+    border-color: rgb(158, 71, 86);
+}
+
+.social-btn i {
+    margin-right: 5px;
+}
+
+
+/* =========================
+   12. TABLETS
+   Width: 601px - 900px
+========================= */
+
+@media screen and (max-width: 900px) {
+
+    body {
+        justify-content: center;
+        padding: 25px;
+    }
+
+    .page {
+        width: min(500px, 100%);
+        margin-right: 0;
+    }
+
+}
+
+
+/* =========================
+   13. MOBILE PHONES
+   Width: 600px and below
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        justify-content: center;
+        align-items: center;
+
+        padding: 16px;
+
+        background-position: center;
+    }
+
+    .page {
+        width: 100%;
+
+        padding: 22px 20px 28px;
+
+        border-radius: 16px;
+        margin: 0;
+    }
+
+    .heading {
+        font-size: clamp(30px, 8vw, 38px);
+        margin-top: 8px;
+    }
+
+    .heart {
+        font-size: 0.8em;
+    }
+
+    .sub-heading {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .quote {
+        font-size: 15px;
+        margin: 14px 0 22px;
+    }
+
+    form {
+        gap: 16px 10px;
+    }
+
+    .email,
+    .password {
+        height: 44px;
+    }
+
+    .einput,
+    .pinput {
+        font-size: 15px;
+        padding-left: 40px;
+    }
+
+    .msgemojii,
+    .lockemojii {
+        left: 11px;
+        font-size: 17px;
+    }
+
+    .remember,
+    .forget {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        min-height: 43px;
+    }
+
+    .or-divider {
+        margin: 18px auto;
+        font-size: 15px;
+    }
+
+    .social-login {
+        gap: 10px;
+    }
+
+    .social-btn {
+        min-height: 42px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================
+   14. SMALL MOBILE PHONES
+   Width: 380px and below
+========================= */
+
+@media screen and (max-width: 380px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .page {
+        padding: 20px 14px 24px;
+        border-radius: 14px;
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .sub-heading {
+        font-size: 17px;
+    }
+
+    .quote {
+        font-size: 14px;
+    }
+
+    .remember,
+    .forget {
+        font-size: 13px;
+    }
+
+    #remember {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+
+    .social-btn {
+        font-size: 13px;
+    }
+
+}
+.sign-text{
+    color :rgb(158, 71, 86);
+    text-decoration : none;
+    
+}

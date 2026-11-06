@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://kit.fontawesome.com/01a5dd5a4f.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <div class="page">
+        <h1 class="heading">Welcome Back <span class="heart">♥</span></h1>
+        <p class="sub-heading">to My ToDoList</p>
+        <p class="quote">
+            Plan your today, build your tomorrow ♥
+        </p>
+        <form>
+            <div class="email">
+                <i class="fa-regular fa-envelope msgemojii"></i>
+                <input class="einput" type="email" placeholder="Email or Username" required>
+            </div>
+
+            <div class="password">
+                <i class="fa-solid fa-lock lockemojii"></i>
+                <input class="pinput" type="password" placeholder="Create Password" required>
+                <div class="password-checklist">
+
+                    <p id="length" class="invalid">
+                        ✖ At least 8 characters
+                    </p>
+
+                    <p id="uppercase" class="invalid">
+                        ✖ One uppercase letter (A-Z)
+                    </p>
+
+                    <p id="lowercase" class="invalid">
+                        ✖ One lowercase letter (a-z)
+                    </p>
+
+                    <p id="number" class="invalid">
+                        ✖ One digit (0-9)
+                    </p>
+
+                    <p id="special" class="invalid">
+                        ✖ One special character (@#$!)
+                    </p>
+
+                </div>
+            </div>
+            <div class="remember">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+
+            <button class="submit-btn" type="submit">Sign Up ♡</button>
+
+
+
+        </form>
+        <div class="or-divider">
+            <span>OR</span>
+        </div>
+        <div class="social-login">
+
+            <button type="button" class="social-btn google-btn">
+                <i class="fa-brands fa-google"></i>
+                Continue with Google
+            </button>
+
+            <button type="button" class="social-btn github-btn">
+                <i class="fa-brands fa-github"></i>
+                Continue with GitHub
+            </button>
+
+        </div>
+        <p class="sign-up">
+            Already have an account?
+            <a class="sign-text" href="login.html">Login</a>
+        </p>
+
+
+    </div>
+    <script type="module" src="signup.js"></script>
+
+
+
+
+</body>
+
+</html>
